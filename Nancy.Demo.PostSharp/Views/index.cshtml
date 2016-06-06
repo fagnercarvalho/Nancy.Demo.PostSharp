@@ -1,0 +1,22 @@
+﻿@using Nancy.ViewEngines.Razor
+@using Nancy.Demo.PostSharp
+
+@inherits NancyRazorViewBase<FruitViewModel>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Testing PostSharp</title>
+</head>
+<body>
+    <h2>Fruits:</h2>
+    <ul>
+        @foreach (var fruit in @Model.Fruits)
+        {
+            <li>@fruit.Id - @fruit.Name</li>
+        }
+    </ul>
+    Cached content: @(Model.Cached ? "yes" : "no")
+</body>
+</html>
